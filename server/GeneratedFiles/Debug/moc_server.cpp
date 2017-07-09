@@ -22,7 +22,7 @@ static const uint qt_meta_data_server[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -30,16 +30,14 @@ static const uint qt_meta_data_server[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-      17,    8,    7,    7, 0x08,
-      49,   44,    7,    7, 0x08,
-      85,   76,    7,    7, 0x08,
+      13,    8,    7,    7, 0x08,
+      49,   40,    7,    7, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_server[] = {
-    "server\0\0UserInfo\0ClientLogin(UserLoginInfo)\0"
-    "Info\0SendMessage(TranssionInfo)\0"
+    "server\0\0Info\0SendMessage(TranssionInfo)\0"
     "clientId\0ClientDisconnection(QString)\0"
 };
 
@@ -49,9 +47,8 @@ void server::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         Q_ASSERT(staticMetaObject.cast(_o));
         server *_t = static_cast<server *>(_o);
         switch (_id) {
-        case 0: _t->ClientLogin((*reinterpret_cast< const UserLoginInfo(*)>(_a[1]))); break;
-        case 1: _t->SendMessage((*reinterpret_cast< const TranssionInfo(*)>(_a[1]))); break;
-        case 2: _t->ClientDisconnection((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 0: _t->SendMessage((*reinterpret_cast< const TranssionInfo(*)>(_a[1]))); break;
+        case 1: _t->ClientDisconnection((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -89,9 +86,9 @@ int server::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 2;
     }
     return _id;
 }

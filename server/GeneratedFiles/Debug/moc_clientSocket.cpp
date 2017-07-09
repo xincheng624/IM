@@ -31,21 +31,20 @@ static const uint qt_meta_data_clientSocket[] = {
 
  // signals: signature, parameters, type, tag, flags
       19,   14,   13,   13, 0x05,
-      57,   48,   13,   13, 0x05,
+      55,   46,   13,   13, 0x05,
 
  // slots: signature, parameters, type, tag, flags
-      83,   14,   13,   13, 0x0a,
-     110,   14,   13,   13, 0x0a,
-     140,   13,   13,   13, 0x0a,
+      81,   14,   13,   13, 0x0a,
+     108,   13,   13,   13, 0x0a,
+     125,   13,   13,   13, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_clientSocket[] = {
-    "clientSocket\0\0Info\0sendLoginInfo(UserLoginInfo)\0"
+    "clientSocket\0\0Info\0sendSignals(TranssionInfo)\0"
     "clientId\0disconnectClient(QString)\0"
-    "sendMessage(TemporaryInfo)\0"
-    "receiveMessage(TranssionInfo)\0"
+    "sendMessage(TranssionInfo)\0receiveMessage()\0"
     "deleteClientSocket()\0"
 };
 
@@ -55,10 +54,10 @@ void clientSocket::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         Q_ASSERT(staticMetaObject.cast(_o));
         clientSocket *_t = static_cast<clientSocket *>(_o);
         switch (_id) {
-        case 0: _t->sendLoginInfo((*reinterpret_cast< const UserLoginInfo(*)>(_a[1]))); break;
+        case 0: _t->sendSignals((*reinterpret_cast< const TranssionInfo(*)>(_a[1]))); break;
         case 1: _t->disconnectClient((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 2: _t->sendMessage((*reinterpret_cast< const TemporaryInfo(*)>(_a[1]))); break;
-        case 3: _t->receiveMessage((*reinterpret_cast< const TranssionInfo(*)>(_a[1]))); break;
+        case 2: _t->sendMessage((*reinterpret_cast< const TranssionInfo(*)>(_a[1]))); break;
+        case 3: _t->receiveMessage(); break;
         case 4: _t->deleteClientSocket(); break;
         default: ;
         }
@@ -105,7 +104,7 @@ int clientSocket::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void clientSocket::sendLoginInfo(const UserLoginInfo & _t1)
+void clientSocket::sendSignals(const TranssionInfo & _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

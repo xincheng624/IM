@@ -15,7 +15,7 @@ private:
 	//客户端信息
 	QMap<QString, clientSocket*> UserMap;
 	//临时信息
-	TemporaryInfo  TempInfo;
+	TranssionInfo  TempInfo;
 	//用户信息
 	UserLoginInfo UserInfo;
 	//网络状态描述子

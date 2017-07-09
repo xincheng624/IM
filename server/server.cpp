@@ -39,8 +39,11 @@ void server::incomingConnection(int descriptor)
 	//新建客户端，建立clientSocket和server的连接
 	clientSocket* client = new clientSocket(this);
 
-	connect(client,SIGNAL(sendLoginInfo(const UserLoginInfo&)),
-		this,SLOT(ClientLogin(const UserLoginInfo& UserInfo)));
+	//connect(client,SIGNAL(sendLoginInfo(const UserLoginInfo&)),
+	//	this,SLOT(ClientLogin(const UserLoginInfo& UserInfo)));
+
+	connect(client,SIGNAL(sendSignals(const TranssionInfo&)),
+		this,SLOT(SendMessage(const TranssionInfo& Info)));
 	connect(client,SIGNAL(disconnectClient(const QString&)),
 		this,SLOT(ClientDisconnection(const QString& clientId)));
 

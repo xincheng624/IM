@@ -4,7 +4,9 @@
 #include <qstring.h>
 #include <QtCore/QtCore>
 #include <QtGui/QtGui>
-#include "clientSocket.h"
+
+
+class clientSocket;
 
 //用户登录状态信息
 struct UserLoginInfo
@@ -40,15 +42,7 @@ struct TranssionInfo
 	QString Password;							//用户密码
 };
 
-//临时信息
-struct TemporaryInfo
-{
-	qint32 RequestCommand;
-	qint32 Status;								//用户状态
-	QVector<FriendInformation> FriendVec;	    //朋友列表
-	QVector<QString> AccountVec;				//账户列表
-	QString ClientId;							//用户ID
-};
+
 
 
 //用户状态
@@ -64,7 +58,8 @@ enum RequestKind
 {
 	LOGIN = 1,									//登录
 	DISCONNECT = 2,								//断开
-	REGISTRER = 3								//注册
+	REGISTRER = 3,								//注册
+	CHECK_CONNECTION = 12						//检查能否连接
 };
 
 //处理结果
@@ -79,12 +74,14 @@ enum ProcessResult
 //数据库字段
 enum SqlWord
 {
-	ACCOUNT = 0;								//账户
-	PASSWORD = 1;								//密码
-	NICKNAME = 2;								//昵称
-	PHOTONUMBER = 3;							//头像编号
-	STATUS = 4;									//状态
-	ABOUTSELF = 5;								//自我介绍
+	ACCOUNT = 0,								//账户
+	PASSWORD = 1,								//密码
+	NICKNAME = 2,								//昵称
+	PHOTONUMBER = 3,							//头像编号
+	STATUS = 4,									//状态
+	ABOUTSELF = 5								//自我介绍
 };
+
+
 
 #endif
